@@ -1,0 +1,29 @@
+<html>
+ <head>
+  <script type ="text/javascript"	src = "https://www.gstatic.com/charts/loader.js"></script>
+  <script type = "text/javascript">
+		google.charts.load('current', {'packages': ['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+
+ function drawChart() {
+
+		var data = google.visualization.arrayToDataTable([
+		['Type de Facture', 'Montant'],
+		['Electricite_19/07/2020', 42.5],
+		['Electricite_19/08/2020', 85],
+		['Electricite_19/09/2020', 127.5],
+		['Electricite_19/10/2020', 170],
+		]);
+		var options = {
+			title: 'PieChart des Factures en fonction des valeurs'
+		};
+
+		var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+		chart.draw(data, options);
+		}
+	</script>
+ </head>
+ <body>
+	<div id="piechart" style="width: 900px; height: 500px;"></div>
+ </body>
+</html>
